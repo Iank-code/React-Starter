@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+}
+.nav button {
+  padding: 12px 22px;
+  background-color: blue;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  margin-left: 15px;
+}
