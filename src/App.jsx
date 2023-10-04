@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import School from "./components/School";
+import { notifications } from "@mantine/notifications";
+import "@mantine/notifications/styles.css";
 
 function App() {
   const [number, setNumber] = useState(0);
@@ -22,7 +24,20 @@ function App() {
   // }, [number]);
   function submitForm(event) {
     event.preventDefault();
-    alert(`Hello ${name} your password is ${password}`);
+    // alert(`Hello ${name} your password is ${password}`);
+  }
+
+  function display() {
+    // notifications.show({
+    // title: "Testing Notifications",
+    // message: `Hello ${name}`,
+    // });
+    notifications.show({
+      title: "Testing Notifications",
+      message: `Hello ${name}`,
+      color: "red",
+      autoClose: 2000,
+    });
   }
   return (
     <div>
@@ -48,6 +63,8 @@ function App() {
         />
         <button type="submit">Submit</button>
       </form>
+
+      <button onClick={display}>Display notification</button>
     </div>
   );
 }
