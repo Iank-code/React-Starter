@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import School from "./components/School";
 import { notifications } from "@mantine/notifications";
-import "@mantine/notifications/styles.css";
+
 
 function App() {
   const [number, setNumber] = useState(0);
@@ -17,7 +17,7 @@ function App() {
   // Function that decreases the number
   // function decreaseNumber() {
   //   return setNumber(number - 1);
-  // }
+  // }3
 
   // useEffect(() => {
   //   console.log("Number has increased by one");
@@ -64,7 +64,16 @@ function App() {
         <button type="submit">Submit</button>
       </form>
 
-      <button onClick={display}>Display notification</button>
+      <button
+        onClick={() =>
+          notifications.show({
+            title: "Default notification",
+            message: "Hey there, your code is awesome! 🤥",
+          })
+        }
+      >
+        Display notification
+      </button>
     </div>
   );
 }
